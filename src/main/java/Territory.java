@@ -1,4 +1,4 @@
-public class Territory {
+public class Territory implements Actionable {
 
     private String name;
     private int xCoordinate;
@@ -59,5 +59,10 @@ public class Territory {
         return "Territory{name='" + name + "', x=" + xCoordinate +
                 ", y=" + yCoordinate + ", terrainType='" + terrainType +
                 "', ownerTeam='" + ownerTeam + "'}";
+    }
+
+    @Override
+    public void performAction() {
+        System.out.println("Territory.performAction(): My uniqueness is changing control and affecting resources.");
     }
 }

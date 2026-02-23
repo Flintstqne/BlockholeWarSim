@@ -1,4 +1,4 @@
-public class Player {
+public class Player implements Actionable {
 
     private String name;
     private String role;
@@ -58,5 +58,10 @@ public class Player {
     public String toString() {
         return "Player{name='" + name + "', role='" + role + "', contributionPoints=" +
                 contributionPoints + ", level=" + level + ", active=" + active + "}";
+    }
+
+    @Override
+    public void performAction() {
+        System.out.println("Player.performAction(): My uniqueness is strategic planning and resource gathering.");
     }
 }

@@ -8,6 +8,29 @@
 Project Description:  A Java-based territory war simulation application that models teams, players, territories, and war phases to analyze and manage a persistent conflict inspired by multiplayer sandbox games.
 
 
+## Current Assignment Name:   'M04-A01: Implementing Inheritance and Interfaces'
+
+## Assignment Accomplishments - (Description)
+For this assignment, I implemented inheritance and interfaces in my Blockhole War Simulator project:
+
+* **Class Hierarchy (Inheritance):**
+  - Created a new super-class `Unit` representing a general game unit.
+  - Developed two sub-classes: `Soldier` (with unique `weaponType`) and `Medic` (with unique `medkits`), each overriding two methods from `Unit` (`getRoleDescription()` and `performSpecialAction()`) with unique implementations.
+  - Each sub-class provides different attributes and behaviors, demonstrating polymorphism.
+
+* **Interface Implementation:**
+  - Defined a new interface `Actionable` with the abstract method `performAction()`.
+  - Implemented `Actionable` in two unrelated classes: `Player` and `Territory`, each with a unique implementation of `performAction()`.
+
+* **Testing:**
+  - Created a `TestInheritInterface` class in `src/test/java` with two methods:
+    - `testClassHierarchy()`: Instantiates and tests the class hierarchy, adding multiple `Soldier` and `Medic` objects to an `ArrayList<Unit>`, then iterating and calling overridden methods to print unique messages.
+    - `testInterface()`: Instantiates and tests the interface, adding `Player` and `Territory` objects to an `ArrayList<Actionable>`, then iterating and calling `performAction()` to print unique messages.
+  - Both tests are run from the `main()` method, and output is printed to the console for verification.
+
+This assignment demonstrates the use of inheritance, method overriding, interfaces, and polymorphism in Java, as well as proper testing and documentation practices.
+
+
 ## Current Assignment Name:   'M03_A01: Writing Model Unit Tests'
 
 ## Assignment Accomplishments - (Description)
