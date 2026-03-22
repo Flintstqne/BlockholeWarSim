@@ -7,6 +7,65 @@
 
 Project Description:  A Java-based territory war simulation application that models teams, players, territories, and war phases to analyze and manage a persistent conflict inspired by multiplayer sandbox games.
 
+## Current Assignment Name:   'M06-A01: Implementing List-Detail Pattern with CRUD Operations'
+
+## Assignment Accomplishments - (Description)
+For this assignment, I implemented the list-detail pattern as part of the application's user interface design, allowing users to view a list of territories and manage them through full CRUD (Create, Read, Update, Delete) functionality.
+
+* **Application / Entry Point:**
+  - `Main` launches the list-detail pattern flow by creating the `TerritoryListDetailController` on the dispatch thread.
+
+* **Model Classes (MVC):**
+  - `Territory` is the core model object displayed in both list and detail views.
+  - `TerritoryListModel` owns an `ArrayList<Territory>` with methods for add, update, delete, and list access.
+
+* **View Classes (MVC):**
+  - **`TerritoryListView` (List-View):** Displays territories in a scrollable `JTable` with 5 attribute columns (Name, X, Y, Terrain Type, Owner Team). Pre-populated with 6 territory records on application startup. Provides buttons for View, Add, Edit, Delete, and Exit operations.
+  - **`TerritoryDetailView` (Detail-View):** A modal dialog for viewing and editing territory details. Used for both adding new territories and editing existing ones. Includes form validation for required fields and numeric coordinates.
+
+* **Controller Class (MVC):**
+  - `TerritoryListDetailController` mediates all behavior between the views and model.
+  - Handles all CRUD operations: Create (Add), Read (View), Update (Edit), and Delete with confirmation.
+  - Enforces business rules: prevents deletion on empty list, requires row selection for Edit/Delete/View, and syncs data between views.
+  - Manages view lifecycle and data synchronization when the list regains focus.
+
+* **Key Features Implemented:**
+  - Scrollable table displaying at least 6 territories with 4+ attributes per row.
+  - Full CRUD functionality accessible from the list-view.
+  - Detail-view form for adding and editing territories with validation.
+  - Confirmation dialog for delete operations.
+  - Model object quantities sync between list and detail views.
+  - Exit application only available from the list-view.
+  - Form validation (required fields, integer coordinates).
+
+This assignment demonstrates the list-detail design pattern with proper separation of concerns, full CRUD functionality, and synchronized data management across multiple UI components.
+
+
+## Previous Assignment Name:   'M05-A01: Implementing Model-View-Controller (MVC)'
+
+## Assignment Accomplishments - (Description)
+For this assignment, I implemented an MVC-based feature that allows users to navigate and manage a list of territories.
+
+* **Application / Entry Point:**
+  - `Main` now launches the MVC flow by creating the controller on the dispatch thread.
+
+* **Model Classes (MVC):**
+  - `Territory` is the core model object displayed and edited in the UI.
+  - `TerritoryListModel` is the list model that owns an `ArrayList<Territory>` and provides add, update, delete, and index-based access methods.
+
+* **Controller Class (MVC):**
+  - `TerritoryMvcController` mediates all behavior between the view and model.
+  - It handles button actions for Previous, Next, Add, Update, Clear, Delete, and Exit.
+  - It enforces boundary and empty-list checks (first/last navigation limits, no update/delete on empty list).
+  - It validates form inputs before Add/Update (required fields and integer coordinate parsing).
+
+* **View Class (MVC):**
+  - `TerritoryMvcView` uses `JLabel` + `JTextField` components for territory data and provides all required buttons.
+  - The view only communicates with the controller through action bindings and helper getter/setter methods.
+  - On launch, the first territory in the list is displayed.
+
+This assignment demonstrates separation of concerns with MVC while supporting list navigation and CRUD functionality through a desktop UI.
+
 
 ## Current Assignment Name:   'M04-A01: Implementing Inheritance and Interfaces'
 
@@ -90,4 +149,4 @@ These are instructions on how to run the project once loaded into IntelliJ.
 
 Any other specifics (if needed):
     
-   * No additional configuration is required. Running Main.java will instantiate one object of each model class and output their initialized data to the console using the toString() methods.
+   * No additional configuration is required. Running `Main.java` opens the MVC  interface for navigating and managing territory records.
